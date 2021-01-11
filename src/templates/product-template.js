@@ -12,6 +12,12 @@ const ComponentName = ({
       price,
       image: { fixed },
       info: { info },
+      category,
+      dimensions,
+      color,
+      rating,
+      material,
+      manufacturerInfo: { manufacturerInfo },
     },
   },
 }) => {
@@ -53,20 +59,18 @@ const ComponentName = ({
             layout={"horizontal"}
             column={{ xxl: 3, xl: 3, lg: 2, md: 2, sm: 1, xs: 1 }}
           >
-            <Descriptions.Item label="Product Title">
-              Cloud Database
-            </Descriptions.Item>
-            <Descriptions.Item label="Billing">Placeholder</Descriptions.Item>
-            <Descriptions.Item label="Color">Placeholder</Descriptions.Item>
-            <Descriptions.Item label="Material">Placeholder</Descriptions.Item>
+            <Descriptions.Item label="Product Title">{title}</Descriptions.Item>
+            <Descriptions.Item label="Category">{category}</Descriptions.Item>
+            <Descriptions.Item label="Color">{color}</Descriptions.Item>
+            <Descriptions.Item label="Material">{material}</Descriptions.Item>
             <Descriptions.Item label="Dimensions">
-              Placeholder
+              {dimensions}
             </Descriptions.Item>
             <Descriptions.Item label="Product Rating">
-              <Rate disabled value={3.5} allowHalf />
+              <Rate disabled value={rating} allowHalf />
             </Descriptions.Item>
             <Descriptions.Item label="Manufacturer information">
-              {info}
+              {manufacturerInfo}
             </Descriptions.Item>
           </Descriptions>
         </div>
@@ -79,14 +83,23 @@ export const query = graphql`
   query GetSingleProduct($slug: String) {
     product: contentfulProduct(slug: { eq: $slug }) {
       title
+      slug
+      info {
+        info
+      }
       price
       image {
         fixed(width: 324) {
           ...GatsbyContentfulFixed
         }
       }
-      info {
-        info
+      category
+      dimensions
+      color
+      rating
+      material
+      manufacturerInfo {
+        manufacturerInfo
       }
     }
   }
