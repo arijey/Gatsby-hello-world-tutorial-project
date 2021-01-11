@@ -16,7 +16,9 @@ const ComponentName = ({ data }) => {
         {products.map(product => {
           return (
             <article key={product.id}>
-              <Image fluid={product.image.fluid} alt={product.title} />
+              <Link to={`/products/${product.slug}`}>
+                <Image fluid={product.image.fluid} alt={product.title} />
+              </Link>
               <h3>
                 {product.title}
                 <span>${product.price}</span>
