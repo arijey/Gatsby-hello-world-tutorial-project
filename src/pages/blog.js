@@ -1,21 +1,20 @@
 import React from "react"
 import Layout from "../components/layout"
 import styles from "../components/blog.module.css"
+import { Card } from "antd"
 
 const blog = () => {
   return (
     <Layout>
-      <div className={styles.page}>
-        <h1 className={styles.text}>this is our blog page</h1>
-        <p className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-          nulla cupiditate maxime a suscipit sunt illo sint eum repellat neque
-          nostrum excepturi voluptate, earum quam molestiae cumque laboriosam
-          consequuntur quo esse voluptatibus mollitia quaerat numquam. Quam
-          necessitatibus, beatae laboriosam fugiat et dolorum quae maiores
-          velit, ad architecto fuga voluptatem pariatur?
-        </p>
-      </div>
+      <section className={styles.page}>
+        <div className="site-card-border-less-wrapper">
+          <Card title="Card title" bordered={false} style={{ width: 300 }}>
+            <p>Card content</p>
+            <p>Card content</p>
+            <p>Card content</p>
+          </Card>
+        </div>
+      </section>
     </Layout>
   )
 }
