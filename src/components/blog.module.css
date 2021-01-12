@@ -1,17 +1,16 @@
 .page {
   padding-top: 2rem;
   width: 90vw;
-  max-width: 1170px;
   margin: 0 auto;
 }
 
 .postCardWrapper {
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .postCard {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 @media screen and (min-width: 768px) {
@@ -26,6 +25,14 @@
   .page {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 3rem;
   }
 }
