@@ -1,22 +1,31 @@
 .page {
+  padding-top: 2rem;
   width: 90vw;
   max-width: 1170px;
-  text-transform: capitalize;
   margin: 0 auto;
+}
+
+.postCardWrapper {
+  margin-bottom: 4rem;
+}
+
+.postCard {
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 @media screen and (min-width: 768px) {
   .page {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: 2rem;
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .page {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
   }
 }

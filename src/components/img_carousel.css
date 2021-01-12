@@ -2,7 +2,8 @@
   height: auto;
 }
 .img-carousel-content {
-  height: 90vw;
+  height: 50vw;
+  max-height: 600px;
   color: #fff;
   line-height: 160px;
   text-align: center;
